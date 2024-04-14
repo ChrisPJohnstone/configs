@@ -12,4 +12,4 @@ bindkey -v
 alias grep='grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git"'
  
  # Start tmux by default
- tmux new-session -c ~/my_folder
+ tmux attach-session || tmux new-session -c ~/my_folder
