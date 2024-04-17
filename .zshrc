@@ -10,7 +10,10 @@ bindkey -v
 
 # Aliases grep to exclude directories that make me cry
 alias grep='grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv"'
- 
+
+# Aliases cdk to clear before running
+alias cdk="clear ; cdk"
+
 # Start tmux by default
 if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
