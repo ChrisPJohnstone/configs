@@ -9,7 +9,7 @@ export PROMPT='%S[%D{%T}] [%1~]$(parse_git_branch)%s '
 bindkey -v
 
 # Aliases grep to exclude directories that make me cry
-alias grep='grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv"'
+alias grep='clear ; grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv"'
 
 # Aliases cdk to clear before running
 alias cdk="clear ; cdk"
