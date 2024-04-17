@@ -64,5 +64,7 @@ set backspace=eol,start
 " Disable that gahd damn bell
 set visualbell
 
-" Macro for encasing
-let @1 = "ciw\"\<C-R>\"\"\<ESC>bh"
+" Command for encasing
+let mapleader="\\"
+nnoremap <leader>' ciw'<C-R>"'<ESC>bh
+nnoremap <leader>" ciw"<C-R>""<ESC>bh
