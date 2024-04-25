@@ -64,6 +64,9 @@ set backspace=eol,start
 " Disable that gahd damn bell
 set visualbell
 
+" Disable linewrapping
+set nowrap
+
 " Command for encasing
 let mapleader="\\"
 nnoremap <leader>' ciw'<C-R>"'<ESC>bh
