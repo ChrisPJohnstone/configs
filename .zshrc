@@ -28,6 +28,3 @@ alias cdk="clear ; cdk"
 if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
 fi
-
-# Set up gpush to push to origin
-alias gpush="git push --set-upstream origin $(git symbolic-ref --short HEAD)"
