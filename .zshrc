@@ -1,9 +1,19 @@
-# Change Prompt
-parse_git_branch() {
+# Function to get the current git branch
+function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
 }
+
+# Function to get virtual environment name
+function parse_virtual_env() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        echo " [${VIRTUAL_ENV##*/}]"
+    fi
+}
+
+# Change Prompt
 setopt PROMPT_SUBST
-export PROMPT='%S[%D{%T}] [%1~]$(parse_git_branch)%s '
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export PROMPT='%S[%D{%T}] [%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 
 # Changes shell to vi mode
 bindkey -v
@@ -18,3 +28,5 @@ alias cdk="clear ; cdk"
 if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
 fi
+
+# Set up gpush to push to origin
