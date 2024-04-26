@@ -30,3 +30,4 @@ if [ -z "$TMUX" ]; then
 fi
 
 # Set up gpush to push to origin
+alias gpush="git push --set-upstream origin $(git symbolic-ref --short HEAD)"
