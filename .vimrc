@@ -74,3 +74,6 @@ nnoremap <leader>" ciw"<C-R>""<ESC>bh
 
 " Enables gf to open python imports
 filetype plugin on
+
+" Enable fuzzy finder
+set runtimepath+=$HOMEBREW_PREFIX/opt/fzf
