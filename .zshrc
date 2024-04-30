@@ -28,3 +28,6 @@ alias cdk="clear ; cdk"
 if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
 fi
+
+# Enable fuzzy finder
+eval "$(fzf --zsh)"
