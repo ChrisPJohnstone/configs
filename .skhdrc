@@ -1,6 +1,6 @@
 # App Selection
-ctrl - 1 : open -a "Terminal"
-ctrl - 2 : open -a "Firefox"
+ctrl - 1 : open -a "Firefox"
+ctrl - 2 : open -a "Terminal"
 ctrl - 3 : open -a "Slack"
 ctrl - 4 : open -a "Mail"
 ctrl - 5 : open -a "Microsoft Teams (work or school)"
