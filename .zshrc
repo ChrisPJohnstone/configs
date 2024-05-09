@@ -14,7 +14,6 @@ function parse_virtual_env() {
 setopt PROMPT_SUBST
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PROMPT='%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
-export RPROMPT='%S[%D{%T}]'
 
 # Changes shell to vi mode
 bindkey -v
@@ -29,6 +28,3 @@ alias cdk="clear ; cdk"
 if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
 fi
-
-# Enable fuzzy finder
-eval "$(fzf --zsh)"
