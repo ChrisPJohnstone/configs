@@ -31,3 +31,6 @@ fi
 
 # Alias exuberant ctags
 alias ctags="`brew --prefix`/bin/ctags"
+
+# Alias to start tmux session script
+alias tcd="~/my_folder/configs/start_tmux_session.sh"
