@@ -1,0 +1,10 @@
+[user]
+	name = Christopher Johnstone
+	email = chrispjohnstone97@gmail.com
+[core]
+	autocrlf = input
+	excludesfile = /Users/christopherjohnstone/.gitignore_global
+[init]
+	defaultBranch = main
+[push]
+	default = current
