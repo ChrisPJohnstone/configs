@@ -18,9 +18,6 @@ export PROMPT='%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 # Changes shell to vi mode
 bindkey -v
 
-# Aliases grep to exclude directories that make me cry
-alias grep='clear ; grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv" --exclude-dir "venv" --exclude-dir "node_modules" --exclude-dir "python_modules" --exclude-dir ".idea" --exclude-dir ".serverless"'
-
 # Aliases cdk to clear before running
 alias cdk="clear ; cdk"
 
@@ -34,3 +31,16 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # Alias to start tmux session script
 alias tcd="~/my_folder/configs/start_tmux_session.sh"
+
+# Aliases grep to exclude directories that make me cry
+alias grep='clear ; grep \
+    --exclude-dir ".idea" \
+    --exclude-dir ".git" \
+    --exclude-dir ".serverless" \
+    --exclude-dir ".venv" \
+    --exclude-dir "__pycache__" \
+    --exclude-dir "cdk.out" \
+    --exclude-dir "node_modules" \
+    --exclude-dir "python_modules" \
+    --exclude-dir "venv" \
+'
