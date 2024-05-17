@@ -19,7 +19,7 @@ export PROMPT='%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 bindkey -v
 
 # Aliases grep to exclude directories that make me cry
-alias grep='clear ; grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv"'
+alias grep='clear ; grep --exclude-dir "__pycache__" --exclude-dir "cdk.out" --exclude-dir ".git" --exclude-dir ".venv" --exclude-dir "venv" --exclude-dir "node_modules" --exclude-dir "python_modules" --exclude-dir ".idea" --exclude-dir ".serverless"'
 
 # Aliases cdk to clear before running
 alias cdk="clear ; cdk"
