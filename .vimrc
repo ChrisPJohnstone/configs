@@ -71,6 +71,7 @@ set nowrap
 let mapleader="\\"
 nnoremap <leader>' ciw'<C-R>"'<ESC>bh
 nnoremap <leader>" ciw"<C-R>""<ESC>bh
+nnoremap <leader>` ciw`<C-R>"`<ESC>bh
 
 " Enables gf to open python imports
 filetype plugin on
