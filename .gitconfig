@@ -4,6 +4,7 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/christopherjohnstone/.gitignore_global
+	editor = vim
 [init]
 	defaultBranch = main
 [push]
