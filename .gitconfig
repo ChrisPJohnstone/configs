@@ -10,4 +10,4 @@
 [push]
 	default = current
 [alias]
-    edit = !vim -p $(git ls-files -o -m --exclude-standard)
+    edit = !vim $(git ls-files -o -m --exclude-standard)
