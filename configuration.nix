@@ -38,13 +38,21 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Desktop Environment
-  services.xserver.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
+    # Desktop Environment
+    enable = true;
+    desktopManager.cinnamon.enable = true;
+    desktopManager.xterm.enable = true;
+    displayManager.lightdm.enable = true;
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+      ];
+    };
+
+    # Configure keymap in X11
     layout = "gb";
     xkbVariant = "mac";
   };
