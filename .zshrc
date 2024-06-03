@@ -26,9 +26,6 @@ if [ -z "$TMUX" ]; then
     tmux attach-session || tmux new-session -c ~/my_folder
 fi
 
-# Alias exuberant ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
 # Alias to start tmux session script
 alias tcd="~/my_folder/configs/start_tmux_session.sh"
 
