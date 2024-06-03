@@ -10,7 +10,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  # Define your hostname.
+  networking.hostName = "nixos";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -25,7 +26,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_GB.UTF-8";
     LC_IDENTIFICATION = "en_GB.UTF-8";
@@ -64,6 +64,25 @@
     pulse.enable = true;
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # System state version
+  system.stateVersion = "24.05";
+  
+  # Configure swap
+  swapDevices = [{
+    device = "/swapfile";
+    size = 16 * 1024; # 16GB
+  }];
+
+  # Install zsh and make default
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.christopher = {
     isNormalUser = true;
@@ -75,16 +94,4 @@
       tmux
     ];
   };
-
-  # Install zsh and make default
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  system.stateVersion = "24.05";
 }
