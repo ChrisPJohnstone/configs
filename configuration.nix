@@ -95,9 +95,10 @@
     description = "Christopher Johnstone";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      fastfetch
       git
-      vim
       tmux
+      vim
     ];
   };
 }
