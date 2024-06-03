@@ -1,12 +1,9 @@
-" Turn on syntax highlighting & and color scheme
+" Aesthetic Choices
 colorscheme slate
-syntax on
+highlight VertSplit ctermbg=None
 
-" Colour Overrides
-highlight Normal ctermbg=None
-highlight StatusLine ctermbg=magenta ctermfg=black
-highlight StatusLineNC ctermbg=magenta ctermfg=black 
-highlight VertSplit ctermfg=magenta ctermbg=None
+" Enable syntax highlighting
+syntax on
 
 " Syntax corrections for unsupported file types
 augroup SyntaxHighlighting
