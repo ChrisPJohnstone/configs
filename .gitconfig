@@ -11,3 +11,4 @@
 	default = current
 [alias]
     edit = !vim $(git ls-files -o -m --exclude-standard)
+    update = !git checkout main && git pull && git checkout develop && git pull & git merge main
