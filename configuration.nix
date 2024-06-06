@@ -86,6 +86,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     git
+    spotify
     steam
     thunderbird
     tmux
