@@ -18,6 +18,10 @@ export PROMPT='%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 # Changes shell to vi mode
 bindkey -v
 
+# Save command history
+HISTFILE=~/.histfile
+SAVEHIST=1000
+
 # Aliases cdk to clear before running
 alias cdk="clear ; cdk"
 
