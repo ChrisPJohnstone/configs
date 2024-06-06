@@ -82,12 +82,19 @@
     size = 16 * 1024; # 16GB
   }];
 
-  # Install zsh and make default
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  # Install Packages for all users
+  environment.systemPackages = with pkgs; [
+    firefox
+    git
+    steam
+    thunderbird
+    tmux
+    vim
+    zsh
+  ];
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  # Make zsh default shell
+  users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.christopher = {
@@ -96,9 +103,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       fastfetch
-      git
-      tmux
-      vim
     ];
   };
 }
