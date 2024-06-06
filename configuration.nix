@@ -38,6 +38,22 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
+  # Configure console keymap
+  console.keyMap = "uk";
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  # System state version
+  system.stateVersion = "24.05";
+  
   services.xserver = {
     # Desktop Environment
     enable = true;
@@ -57,25 +73,9 @@
     xkbVariant = "mac";
   };
 
-  # Configure console keymap
-  console.keyMap = "uk";
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # System state version
-  system.stateVersion = "24.05";
-  
   # Configure swap
   swapDevices = [{
     device = "/swapfile";
