@@ -54,6 +54,17 @@
   # System state version
   system.stateVersion = "24.05";
   
+
+  # Nvidia bullshit
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  services.xserver.videoDrivers = ["nvidia"];
+
   services.xserver = {
     # Desktop Environment
     enable = true;
@@ -87,7 +98,6 @@
     firefox
     git
     spotify
-    steam
     thunderbird
     tmux
     vim
@@ -98,8 +108,16 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  # Enabled steam
-  programs.steam.enable = true;
+  # Making steam work
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 
   # Enabled virtualbox
   virtualisation.virtualbox.host.enable = true;
