@@ -101,11 +101,14 @@
   # Enabled steam
   programs.steam.enable = true;
 
+  # Enabled virtualbox
+  virtualisation.virtualbox.host.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.christopher = {
     isNormalUser = true;
     description = "Christopher Johnstone";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers"];
     packages = with pkgs; [
       fastfetch
     ];
