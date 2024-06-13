@@ -31,7 +31,7 @@ if [ -z "$TMUX" ]; then
 fi
 
 # Alias to start tmux session script
-alias tcd="~/my_folder/configs/start_tmux_session.sh"
+alias tcd="~/configs/start_tmux_session.sh"
 
 # Aliases grep to exclude directories that make me cry
 alias grep='clear ; grep \
