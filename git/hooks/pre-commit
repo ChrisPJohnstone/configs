@@ -1,0 +1,6 @@
+#!/bin/sh
+black . --check
+if [ $? ]; then
+    echo "Code is not formatted correctly, please run black."
+    exit 1
+fi
