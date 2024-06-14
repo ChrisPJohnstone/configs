@@ -25,18 +25,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
--- Add a vertical ruler at char 80 & make it light grey
-vim.cmd([[highlight ColorColumn ctermbg=8]])
-vim.api.nvim_create_autocmd(
-    {"BufNewFile", "BufRead"},
-    {
-        pattern = {"*.py"},
-        callback = function ()
-            vim.opt.colorcolumn = "80"
-        end
-    }
-)
-
 -- Always show status bar
 vim.opt.laststatus = 2
 vim.opt.statusline = "[%f] %y %= [Column: %v]";
