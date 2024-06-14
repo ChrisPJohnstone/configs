@@ -6,6 +6,7 @@ require'nvim-treesitter.configs'.setup {
         "python",
         "sql",
         "vim",
+        "vimdoc",
     },
     sync_install = false,
     auto_install = true,
