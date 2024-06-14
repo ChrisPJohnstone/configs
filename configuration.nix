@@ -99,6 +99,7 @@
     git
     libgcc
     neovim
+    redshift
     spotify
     thunderbird
     tmux
