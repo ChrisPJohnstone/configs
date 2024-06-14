@@ -15,7 +15,7 @@ fi
 
 if [ -z $TMUX ]
 then
-    tmux attach-session -t "$session_name:Editing"
+    tmux attach-session -t "$session_name:1"
 else
-    tmux switch-client -t "$session_name:Editing"
+    tmux switch-client -t "$session_name:1"
 fi
