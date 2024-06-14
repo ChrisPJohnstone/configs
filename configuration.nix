@@ -97,6 +97,8 @@
   environment.systemPackages = with pkgs; [
     firefox
     git
+    libgcc
+    neovim
     spotify
     thunderbird
     tmux
