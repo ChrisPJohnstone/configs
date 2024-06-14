@@ -75,3 +75,8 @@ filetype plugin on
 
 " Add recursive subdirectories to path
 set path+=**
+
+" Remove directories from vimgrep
+set wildignore+=*/__pycache__/*
+set wildignore+=*venv/*
+set wildignore+=*/node_modules/*
