@@ -33,11 +33,16 @@ highlight ColorColumn ctermbg=8
 set laststatus=2
 set statusline=[%f]\ %y\ %=\ [Column:\ %v]
 
-" Set tab length to 4 & use spaces
-set shiftwidth=4
-set tabstop=4
+" Set tab length & use spaces
 set expandtab
 set smartindent
+set shiftwidth=4
+set tabstop=4
+augroup IndentationExceptions
+    autocmd!
+    autocmd FileType json setlocal shiftwidth=2 tabstop=2
+    autocmd FileType nix setlocal shiftwidth=2 tabstop=2
+augroup END
 
 " Window resizing using Ctrl + hjkl
 nnoremap <C-W><C-h> <C-W><
