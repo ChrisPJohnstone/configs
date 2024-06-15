@@ -54,17 +54,6 @@
   # System state version
   system.stateVersion = "24.05";
   
-
-  # Nvidia bullshit
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-  services.xserver.videoDrivers = ["nvidia"];
-
   services.xserver = {
     # Desktop Environment
     enable = true;
