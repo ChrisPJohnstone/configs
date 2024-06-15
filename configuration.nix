@@ -138,6 +138,7 @@
     extraGroups = [ "networkmanager" "wheel" "vboxusers"];
     packages = with pkgs; [
       fastfetch
+      tree
     ];
   };
 }
