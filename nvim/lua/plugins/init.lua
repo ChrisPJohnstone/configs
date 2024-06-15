@@ -1,4 +1,5 @@
 local plugins = {
+    "catppuccin/nvim",
     "nvim-treesitter/nvim-treesitter",
     "tpope/vim-fugitive",
 }
@@ -18,4 +19,5 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(plugins, opts)
 
+require("plugins.catppuccin")
 require("plugins.treesitter")

@@ -1,6 +1,3 @@
--- Aesthetic Choices
-vim.cmd([[colorscheme slate]])
-
 -- Enable syntax highlighting
 vim.opt.syntax = on
 
