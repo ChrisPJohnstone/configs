@@ -10,5 +10,4 @@
 [push]
 	default = current
 [alias]
-    edit = !vim $(git ls-files -o -m --exclude-standard)
-    update = !git pull origin main:main && git pull origin develop:develop && git checkout develop && git merge main
+    edit = !nvim $(git ls-files -o -m --exclude-standard)
