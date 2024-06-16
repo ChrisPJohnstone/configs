@@ -4,6 +4,9 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- Diable mouse interaction
+vim.opt.mouse = ""
+
 -- Disable linewrapping
 vim.opt.wrap = false
 
