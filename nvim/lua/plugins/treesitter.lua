@@ -5,6 +5,7 @@ require'nvim-treesitter.configs'.setup {
         "nix",
         "python",
         "sql",
+        "tmux",
         "vim",
         "vimdoc",
     },
