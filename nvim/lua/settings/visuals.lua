@@ -22,8 +22,7 @@ vim.api.nvim_create_autocmd(
     }
 )
 
--- Always show status bar
-vim.opt.laststatus = 2
+-- Change status bar format
 vim.opt.statusline = "[%f] %y %= [Column: %v]";
 
 -- For all those times you hit a button and you're not sure what it was
