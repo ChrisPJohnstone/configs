@@ -13,7 +13,7 @@ function parse_virtual_env() {
 # Change Prompt
 setopt PROMPT_SUBST
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PROMPT='%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
+export PROMPT='%F{141}%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 
 # Changes shell to vi mode
 bindkey -v
