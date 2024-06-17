@@ -1,5 +1,6 @@
 local plugins = {
     "catppuccin/nvim",
+    "github/copilot.vim",
     "nvim-treesitter/nvim-treesitter",
     "tpope/vim-fugitive",
 }
