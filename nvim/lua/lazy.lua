@@ -1,10 +1,3 @@
-local plugins = {
-    "catppuccin/nvim",
-    "github/copilot.vim",
-    "nvim-treesitter/nvim-treesitter",
-    "tpope/vim-fugitive",
-}
-
 -- Bootstaps lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -18,7 +11,4 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup(plugins, opts)
-
-require("plugins.catppuccin")
-require("plugins.treesitter")
+require("lazy").setup("catppuccin/nvim")
