@@ -27,7 +27,7 @@ alias cdk="clear ; cdk"
 
 # Start tmux by default
 if [ -z "$TMUX" ]; then
-    tmux attach-session || tmux new-session -c ~/my_folder
+    tmux attach-session || tmux new-session -s "Home" -c ~ -n "Home"
 fi
 
 # Alias to start tmux session script

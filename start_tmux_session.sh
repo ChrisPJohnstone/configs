@@ -1,10 +1,11 @@
 if [ -z $1 ]
 then
-    path="~/my_folder"
+    path="~"
+    session_name="Home"
 else
     path=$1
+    session_name="${path##*/}"
 fi
-session_name="${path##*/}"
 
 tmux has-session -t "$session_name"
 if [ $? != 0 ]
