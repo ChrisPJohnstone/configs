@@ -4,10 +4,9 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/christopherjohnstone/.gitignore_global
-	editor = vim
 [init]
 	defaultBranch = main
 [push]
 	default = current
 [alias]
-    edit = !nvim $(git ls-files -o -m --exclude-standard)
+    edit = !$EDITOR $(git ls-files -o -m --exclude-standard)
