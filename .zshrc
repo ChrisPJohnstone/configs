@@ -18,6 +18,7 @@ export PROMPT='%F{141}%K{236}%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 # Set editor 
 # TODO: Set up proper envars (seperate file?)
 export EDITOR=nvim
+export SHELL=/bin/zsh
 
 # Changes shell to vi mode
 bindkey -v
