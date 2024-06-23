@@ -3,7 +3,7 @@ then
     path="~"
     session_name="Home"
 else
-    path=$1
+    path="$PWD/$1"
     session_name="${path##*/}"
 fi
 
