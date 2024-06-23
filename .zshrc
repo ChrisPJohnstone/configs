@@ -1,3 +1,13 @@
+# ------------------------------ MISCELLANEOUS ------------------------------ #
+# Changes shell to vi mode
+bindkey -v
+
+# Start tmux by default
+if [ -z "$TMUX" ]; then
+    tmux attach-session || tmux new-session -s "Home" -c ~ -n "Home"
+fi
+
+# -------------------------- ENVIRONMENT VARIABLES -------------------------- #
 # Function to get the current git branch
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
@@ -12,28 +22,19 @@ function parse_virtual_env() {
 
 # Change Prompt
 setopt PROMPT_SUBST
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PROMPT='%F{141}%K{236}%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
+VIRTUAL_ENV_DISABLE_PROMPT=1
+PROMPT='%F{141}%K{236}%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
 
-# Set editor 
-# TODO: Set up proper envars (seperate file?)
-export EDITOR=nvim
-export SHELL=/bin/zsh
-
-# Changes shell to vi mode
-bindkey -v
+# Set editor
+EDITOR=nvim
 
 # Save command history
 HISTFILE=~/.histfile
 SAVEHIST=1000
 
+# --------------------------------- ALIASES --------------------------------- #
 # Aliases cdk to clear before running
 alias cdk="clear ; cdk"
-
-# Start tmux by default
-if [ -z "$TMUX" ]; then
-    tmux attach-session || tmux new-session -s "Home" -c ~ -n "Home"
-fi
 
 # Alias to start tmux session script
 alias tcd="~/configs/start_tmux_session.sh"
