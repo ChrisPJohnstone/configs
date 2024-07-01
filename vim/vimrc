@@ -21,14 +21,6 @@ augroup RelativeNumberToggle
     autocmd BufLeave,FocusLost,WinLeave   * if &number | set norelativenumber | endif
 augroup END
 
-" Add a vertical ruler at char 80 & make it light grey
-augroup LineLengthMarkers
-    autocmd!
-    autocmd BufNewFile,Bufread *.py set colorcolumn=80
-    autocmd BufNewFile,BufRead *.sql set colorcolumn=120
-augroup END
-highlight ColorColumn ctermbg=8
-
 " Always show status bar
 set laststatus=2
 set statusline=[%f]\ %y\ %=\ [Column:\ %v]
@@ -38,11 +30,6 @@ set expandtab
 set smartindent
 set shiftwidth=4
 set tabstop=4
-augroup IndentationExceptions
-    autocmd!
-    autocmd FileType json setlocal shiftwidth=2 tabstop=2
-    autocmd FileType nix setlocal shiftwidth=2 tabstop=2
-augroup END
 
 " Window resizing using Ctrl + hjkl
 nnoremap <C-W><C-h> <C-W><
