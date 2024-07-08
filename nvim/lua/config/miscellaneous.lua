@@ -18,3 +18,6 @@ vim.opt.wildignore:append("*/venv/*")
 
 -- Map strange filetypes
 vim.cmd("autocmd BufRead,BufNewFile *.ddl set filetype=sql")
+
+-- Centre cursor on screen
+vim.opt.scrolloff = 999
