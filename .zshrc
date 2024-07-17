@@ -15,16 +15,15 @@ function parse_virtual_env() {
     fi
 }
 
-# 217
 # Change Prompt
 setopt PROMPT_SUBST
 VIRTUAL_ENV_DISABLE_PROMPT=1
-PROMPT='%F{141}%K{236}'
-PROMPT+='%S'
-PROMPT+='[%1~]'
-PROMPT+='$(parse_git_branch)'
-PROMPT+='$(parse_virtual_env)'
-PROMPT+='%s '
+PROMPT='%F{141}%K{236}'         # Set colours
+PROMPT+='%S'                    # Invert colours to highlight prompt
+PROMPT+='[%1~]'                 # Add current directory
+PROMPT+='$(parse_git_branch)'   # Add git branch
+PROMPT+='$(parse_virtual_env)'  # Add virtual environment
+PROMPT+='%s '                   # Return to normal colours
 
 # Set editor
 EDITOR=nvim
