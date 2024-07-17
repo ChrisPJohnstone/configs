@@ -24,6 +24,10 @@ bindsym $mod+Shift+q kill
 ## Start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 
+## Move workspace to other screen
+bindsym $mod+Control+j move workspace to output left
+bindsym $mod+Control+semicolon move workspace to output right
+
 ## Change Focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
