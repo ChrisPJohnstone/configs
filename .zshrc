@@ -15,10 +15,16 @@ function parse_virtual_env() {
     fi
 }
 
+# 217
 # Change Prompt
 setopt PROMPT_SUBST
 VIRTUAL_ENV_DISABLE_PROMPT=1
-PROMPT='%F{141}%K{236}%S[%1~]$(parse_git_branch)$(parse_virtual_env)%s '
+PROMPT='%F{141}%K{236}'
+PROMPT+='%S'
+PROMPT+='[%1~]'
+PROMPT+='$(parse_git_branch)'
+PROMPT+='$(parse_virtual_env)'
+PROMPT+='%s '
 
 # Set editor
 EDITOR=nvim
