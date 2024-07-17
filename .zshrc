@@ -2,11 +2,6 @@
 # Changes shell to vi mode
 bindkey -v
 
-# Start tmux by default
-if [ -z "$TMUX" ]; then
-    tmux attach-session || tmux new-session -s "Home" -c ~ -n "Home"
-fi
-
 # -------------------------- ENVIRONMENT VARIABLES -------------------------- #
 # Function to get the current git branch
 function parse_git_branch() {
