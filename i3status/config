@@ -9,18 +9,6 @@ disk "/" {
     format = "Disk Free: %free"
 }
 
-order += "wireless _first_"
-wireless _first_ {
-    format_up = "WiFi: %quality %frequency"
-    format_down = ""
-}
-
-order += "ethernet _first_"
-ethernet _first_ {
-    format_up = "Ethernet: %speed"
-    format_down = ""
-}
-
 order += "memory"
 memory {
     format = "Memory: %used/%free"
@@ -31,6 +19,18 @@ memory {
 order += "load"
 load {
     format = "CPU Load: %5min"
+}
+
+order += "wireless _first_"
+wireless _first_ {
+    format_up = "WiFi: %quality %frequency"
+    format_down = ""
+}
+
+order += "ethernet _first_"
+ethernet _first_ {
+    format_up = "Ethernet: %speed"
+    format_down = ""
 }
 
 order += "tztime local"
