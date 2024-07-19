@@ -2,6 +2,9 @@
 ## Font for window titles. Will also be used by the bar unless overridden
 font pango:monospace 8
 
+## Add background image
+exec feh --bg-scale ~/Pictures/wallpaper.jpg
+
 # Bindings
 ## Modifier Key
 set $mod Mod4
