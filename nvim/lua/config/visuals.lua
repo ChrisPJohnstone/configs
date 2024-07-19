@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd(
 )
 
 -- Change status bar format
-vim.opt.statusline = "[%f] %y %= [Column: %v]";
+vim.opt.statusline = "[%f] %y %m %= [Column: %v]";
 
 -- For all those times you hit a button and you're not sure what it was
 vim.opt.showcmd = true
