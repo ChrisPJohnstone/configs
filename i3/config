@@ -24,7 +24,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Lock screen
-bindsym $mod+ctrl+q exec i3lock
+bindsym $mod+ctrl+q exec "i3lock -ti ~/Pictures/wallpaper.png"
 
 # Exit i3
 bindsym $mod+Shift+e exec i3-msg exit
