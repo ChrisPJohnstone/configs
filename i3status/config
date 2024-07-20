@@ -6,7 +6,7 @@ general {
 
 order += "disk /"
 disk "/" {
-    format = "Disk Free: %free"
+    format = "Disk: %percentage_used"
 }
 
 order += "memory"
