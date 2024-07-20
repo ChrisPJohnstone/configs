@@ -14,9 +14,9 @@ memory {
     format = "Memory: %percentage_used"
 }
 
-order += "load"
-load {
-    format = "CPU Load: %5min"
+order += "cpu_usage"
+cpu_usage {
+    format = "CPU: %usage"
 }
 
 order += "wireless _first_"
