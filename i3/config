@@ -25,6 +25,8 @@ bindsym $mod+Shift+r restart
 
 # Lock screen
 bindsym $mod+ctrl+q exec "i3lock -ti ~/Pictures/wallpaper.png"
+exec xss set s 300
+exec --no-startup-id xss-lock -- i3lock -ti ~/Pictures/wallpaper.png
 
 # Exit i3
 bindsym $mod+Shift+e exec i3-msg exit
