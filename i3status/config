@@ -11,9 +11,7 @@ disk "/" {
 
 order += "memory"
 memory {
-    format = "Memory: %used/%free"
-    threshold_degraded = "10%"
-    format_degraded = "MEMORY: %free"
+    format = "Memory: %percentage_used"
 }
 
 order += "load"
