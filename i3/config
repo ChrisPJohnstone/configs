@@ -23,6 +23,9 @@ bindsym $mod+Shift+c reload
 # Restart i3 in Place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Lock screen
+bindsym $mod+ctrl+q exec i3lock
+
 # Exit i3
 bindsym $mod+Shift+e exec i3-msg exit
 
