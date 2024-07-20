@@ -33,6 +33,11 @@ ethernet _first_ {
     format_down = ""
 }
 
+order += "volume master"
+volume master {
+    format = "Volume: %volume"
+}
+
 order += "tztime local"
 tztime local {
     format = "%Y-%m-%d %H:%M:%S"
