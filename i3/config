@@ -10,6 +10,10 @@ bar {
     separator_symbol " "
 }
 
+## Remove title bar
+default_border pixel 0
+default_floating_border pixel
+
 ## Add background image
 exec feh --bg-scale ~/Pictures/wallpaper.jpg
 
