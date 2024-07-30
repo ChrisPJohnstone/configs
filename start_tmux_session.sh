@@ -11,7 +11,6 @@ tmux has-session -t "$session_name"
 if [ $? != 0 ]
 then
     tmux new-session -d -s "$session_name" -c "$path" -n "Home"
-    tmux new-window -t "$session_name" -c "$path" -n "Test"
 fi
 
 if [ -z $TMUX ]
