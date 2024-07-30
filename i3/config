@@ -24,15 +24,15 @@ set $mod Mod4
 ## Reload Config
 bindsym $mod+Shift+c reload
 
-# Restart i3 in Place (preserves your layout/session, can be used to upgrade i3)
+## Restart i3 in Place (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Lock screen
+## Lock screen
 bindsym $mod+ctrl+q exec "i3lock -ti ~/Pictures/wallpaper.png"
 exec xss set s 300
 exec --no-startup-id xss-lock -- i3lock -ti ~/Pictures/wallpaper.png
 
-# Exit i3
+## Exit i3
 bindsym $mod+Shift+e exec i3-msg exit
 
 ## Start Terminal
@@ -77,6 +77,9 @@ bindsym $mod+Shift+space floating toggle
 
 ## Toggle Focus Mode
 bindsym $mod+space focus mode_toggle
+
+## Screenshot
+bindsym $mod+Shift+s exec flameshot gui
 
 ## Workspace Specific
 ### Create variables
