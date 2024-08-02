@@ -29,7 +29,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-localectl set-keymap --no-convert mac-us
-setxkbmap -layout us -variant mac
+localectl set-keymap --no-convert us
 xrandr --dpi 196
 i3
