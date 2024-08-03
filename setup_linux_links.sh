@@ -6,5 +6,6 @@ ln -s ~/configs/nvim ~/.config/nvim
 ln -s ~/configs/vim ~/.vim
 ln -s ~/configs/.gitconfig ~/.gitconfig
 ln -s ~/configs/.tmux.conf ~/.tmux.conf
+ln -s ~/configs/.Xresources ~/.Xresources
 ln -s ~/configs/.xinitrc ~/.xinitrc
 ln -s ~/configs/.zshrc ~/.zshrc

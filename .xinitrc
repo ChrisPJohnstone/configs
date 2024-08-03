@@ -30,5 +30,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 localectl set-keymap --no-convert us
-xrandr --dpi 196
+xrandr --auto
+xrandr --output HDMI-0 --right-of DP-0
 i3
