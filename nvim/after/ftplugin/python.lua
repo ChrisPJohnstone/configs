@@ -7,3 +7,6 @@ vim.opt_local.colorcolumn = "80"
 
 -- Set the python interpreter to python3
 vim.g.pyindent_open_paren = 4
+
+-- Run pytest
+vim.api.nvim_set_keymap("n", "<leader>t", ":w | !python3 -m pytest %<CR>", {noremap = true})
