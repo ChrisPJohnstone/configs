@@ -10,3 +10,6 @@
 	default = current
 [alias]
     edit = !$EDITOR $(git ls-files -o -m --exclude-standard)
+    update = !git checkout main && git pull \
+        && git checkout develop && git pull && git merge main \
+        && git checkout $(git rev-parse --abbrev-ref HEAD) && git pull && git merge develop
