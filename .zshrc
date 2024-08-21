@@ -40,7 +40,7 @@ alias cdk="clear ; cdk"
 alias tcd="~/configs/start_tmux_session.sh"
 
 # Aliases grep to exclude directories that make me cry
-alias grep='clear ; grep \
+alias safegrep='clear ; grep \
     --exclude-dir ".idea" \
     --exclude-dir ".git" \
     --exclude-dir ".serverless" \
