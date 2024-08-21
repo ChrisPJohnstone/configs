@@ -37,7 +37,7 @@ SAVEHIST=1000
 alias cdk="clear ; cdk"
 
 # Alias to start tmux session script
-alias tcd="~/configs/start_tmux_session.sh"
+alias tcd="~/configs/scripts/start_tmux_session.sh"
 
 # Aliases grep to exclude directories that make me cry
 alias safegrep='clear ; grep \
