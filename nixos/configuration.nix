@@ -91,6 +91,7 @@
       feh
       firefox
       git
+      imagemagick
       neovim
       pavucontrol
       tmux
