@@ -60,6 +60,12 @@
     };
   };
 
+  # Sound
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+  };
+
   # User Agnostic Packages
   environment.systemPackages = with pkgs; [
     vim
@@ -76,12 +82,13 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Christopher";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "audio" "networkmanager" "wheel" ];
     packages = with pkgs; [
       alacritty
       firefox
       git
       neovim
+      pavucontrol
       tmux
     ];
   };
