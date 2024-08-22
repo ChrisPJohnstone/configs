@@ -37,6 +37,13 @@
     };
   };
 
+  # Location Properties
+  location = {
+    provider = "manual";
+    latitude = 55.8617;
+    longitude = 4.2583;
+  };
+
   # Enable non-free packages
   nixpkgs.config.allowUnfree = true;
 
@@ -59,6 +66,19 @@
         i3status
         i3lock
       ];
+    };
+  };
+
+  # Blue Light Shield
+  services.redshift = {
+    enable = true;
+    brightness = {
+      day = "1";
+      night = "0.8";
+    };
+    temperature = {
+      day = 5500;
+      night = 1500;
     };
   };
 

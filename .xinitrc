@@ -15,5 +15,8 @@ xrandr --output HDMI-0 --right-of DP-0
 # Add Background Image
 feh --bg-scale ~/Pictures/wallpaper.jpg
 
+# Start redshift
+systemctl --user start redshift.service
+
 # Launch Window Manager
 i3
