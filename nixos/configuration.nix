@@ -76,6 +76,7 @@
 
   # Enable Programs
   programs = {
+    steam.enable = true;
     zsh.enable = true;
   };
 
