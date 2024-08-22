@@ -41,8 +41,10 @@
   nixpkgs.config.allowUnfree = true;
 
   # Configure X11
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   services.xserver = {
     enable = true;
+    videoDrivers = [ "nvidia" ];
     xkb = {
       layout = "us";
       variant = "";
