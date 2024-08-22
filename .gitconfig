@@ -10,4 +10,5 @@
 	default = current
 [alias]
     edit = !$EDITOR $(git ls-files -o -m --exclude-standard)
+    newbranch = !git checkout develop && git pull && git branch -b $1
     update = !git checkout develop && git pull && git checkout - && git merge develop
