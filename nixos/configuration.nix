@@ -88,6 +88,7 @@
     extraGroups = [ "audio" "networkmanager" "wheel" ];
     packages = with pkgs; [
       alacritty
+      feh
       firefox
       git
       neovim
