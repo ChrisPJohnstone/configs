@@ -14,8 +14,6 @@ bar {
 default_border pixel 0
 default_floating_border pixel 0
 
-## Add background image
-exec feh --bg-scale ~/Pictures/wallpaper.jpg
 
 # Bindings
 ## Modifier Key
