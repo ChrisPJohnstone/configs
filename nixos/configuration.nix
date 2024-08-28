@@ -114,6 +114,7 @@
       imagemagick
       neovim
       pavucontrol
+      pyright
       tmux
     ];
   };
