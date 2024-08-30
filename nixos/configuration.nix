@@ -118,6 +118,7 @@
       neovim
       pavucontrol
       pyright
+      ripgrep
       tmux
     ];
   };
