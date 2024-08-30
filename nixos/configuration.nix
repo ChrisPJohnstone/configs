@@ -111,6 +111,7 @@
     packages = with pkgs; [
       alacritty
       feh
+      flameshot
       git
       imagemagick
       neovim
