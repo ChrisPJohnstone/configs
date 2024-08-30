@@ -110,6 +110,7 @@
     extraGroups = [ "audio" "networkmanager" "wheel" ];
     packages = with pkgs; [
       alacritty
+      fastfetch
       feh
       flameshot
       git
