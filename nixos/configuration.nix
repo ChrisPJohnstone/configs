@@ -90,6 +90,8 @@
 
   # User Agnostic Packages
   environment.systemPackages = with pkgs; [
+    firefox
+    libreoffice
     vim
     xclip
   ];
@@ -109,7 +111,6 @@
     packages = with pkgs; [
       alacritty
       feh
-      firefox
       git
       imagemagick
       neovim
