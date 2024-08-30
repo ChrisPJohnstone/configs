@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 ln -s ~/configs/alacritty ~/.config/alacritty
-ln -s ~/configs/git/.gitconfig ~/.gitconfig
+ln -s ~/configs/git ~/.config/git
 ln -s ~/configs/i3/base ~/.config/i3
 ln -s ~/configs/i3/status ~/.config/i3status
 ln -s ~/configs/tmux ~/.config/tmux
