@@ -69,6 +69,12 @@
     };
   };
 
+  # Sound
+  hardware.pulseaudio = {
+    enable = true;
+    support32Bit = true;
+  };
+
   # Blue Light Shield
   services.redshift = {
     enable = true;
@@ -82,11 +88,8 @@
     };
   };
 
-  # Sound
-  hardware.pulseaudio = {
-    enable = true;
-    support32Bit = true;
-  };
+  # Enable cron
+  services.cron.enable = true;
 
   # User Agnostic Packages
   environment.systemPackages = with pkgs; [
