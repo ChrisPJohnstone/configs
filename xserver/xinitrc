@@ -18,5 +18,8 @@ feh --bg-scale ~/Pictures/wallpaper.jpg
 # Start redshift
 systemctl --user start redshift.service
 
+# Launch Notification Daemon
+dunst &
+
 # Launch Window Manager
 i3
