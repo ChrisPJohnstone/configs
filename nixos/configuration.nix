@@ -96,6 +96,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     libreoffice
+    unzip
     vim
     xclip
   ];
