@@ -119,6 +119,7 @@
       flameshot
       git
       imagemagick
+      libnotify
       neovim
       pavucontrol
       pyright
