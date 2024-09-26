@@ -120,8 +120,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="^firefox$"] 1
 assign [class="^Alacritty$"] 2
 assign [class="^steam$"] 3
-assign [class="^thunderbird$"] 4
-assign [class="^(?!pavucontrol).*$"] 5
 
 # Other
 ## Start XDG autostart .desktop files using dex. See also
