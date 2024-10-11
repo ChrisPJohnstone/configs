@@ -1,3 +1,9 @@
+[window]
+startup_mode = "Fullscreen"
+
+[font]
+size = 15
+
 [colors.primary]
 foreground = "#af87ff"
 background = "#303030"
