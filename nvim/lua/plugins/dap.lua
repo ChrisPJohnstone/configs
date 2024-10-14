@@ -2,6 +2,7 @@ return {
     "mfussenegger/nvim-dap",
     config = function()
         local dap = require("dap")
+        -- dap.set_log_level("TRACE")
         vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
         vim.keymap.set("n", "<F1>", dap.continue)
         vim.keymap.set("n", "<F2>", dap.step_into)
