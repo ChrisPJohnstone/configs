@@ -1,0 +1,127 @@
+@import "colors.rasi"
+
+configuration {
+    show-icons:                     true;
+    display-drun: 		            "Application";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+    click-to-exit: 		            true;
+    location:                       0;
+}
+
+window {
+    transparency:                   "real";
+    background-color:               @BG;
+    text-color:                     @FG;
+    border:                         2px;
+    border-color:                   @BDR;
+    border-radius:                  10px;
+    width:                          1500px;
+    anchor:                         center;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    enabled: 			            true;
+    padding: 			            8px;
+    background-color: 		        @BG;
+    text-color: 		            @FG;
+}
+
+textbox-prompt-colon {
+    expand: 			            false;
+    str: 			                "";
+    border-radius:                  100%;
+    padding:                        8px 12px 8px 12px;
+    font:			                "Iosevka Nerd Font 30";
+}
+
+entry {
+    background-color:               @BG;
+    text-color:                     @FG;
+    placeholder-color:              @FG;
+    expand:                         true;
+    horizontal-align:               0;
+    placeholder:                    "Search...";
+    blink:                          true;
+    border:                  	    0px 0px 2px 0px;
+    border-color:                   @BDR;
+    border-radius:                  10px;
+    padding:                        8px;
+}
+
+inputbar {
+	children: 		                [ entry ];
+    background-color:               @BG;
+    text-color:                     @FG;
+    expand:                         false;
+    border:                  	    0px 0px 0px 0px;
+    border-radius:                  0px;
+    border-color:                   @BDR;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    background-color:               @BG;
+    text-color:                     @FG;
+    spacing:                        0;
+}
+
+listview {
+    background-color:               @BG;
+    columns:                        1;
+    lines:			                7;
+    spacing:                        4px;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @BG;
+    children:                       [ inputbar, listview ];
+    spacing:                        15px;
+    padding:                        15px;
+}
+
+element {
+    enabled:                        true;
+    spacing:                        10px;
+    padding:                        6px;
+    border-radius:                  8px;
+    background-color:               inherit;
+    text-color:                     inherit;
+    cursor:                         pointer;
+}
+
+element-icon {
+    background-color:               inherit;
+    text-color:                     inherit;
+    cursor:                         inherit;
+    size:                           75px;
+}
+
+element-text {
+    background-color:               inherit;
+    text-color:                     inherit;
+    cursor:                         inherit;
+    vertical-align:                 0.5;
+}
+
+element normal normal, urgent, active {
+    background-color:               @BG;
+    text-color:                     @FG;
+}
+
+element alternate normal, urgent, active {
+    background-color:               @BG;
+    text-color:                     @FG;
+}
+
+element selected normal, urgent, active {
+    background-color:               @BDR;
+    text-color:                     @SEL;
+}
