@@ -1,10 +1,10 @@
-font pango:monospace    10
+font                    pango:monospace 10
 set $base               #24273a
 set $text               #cad3f5
-set $mauve              #c6a0f6
+set $purple             #af87ff
 set $red                #ed8796
 set $grey               #5b6078
-set $crust              #181926
+set $crust              #303030
 
 bar {
     position                    top
@@ -18,7 +18,7 @@ bar {
         focused_separator       $base
 
         # target                border bg        text
-        focused_workspace       $base  $mauve    $crust
+        focused_workspace       $base  $purple   $crust
         active_workspace        $base  $grey     $text
         inactive_workspace      $base  $base     $text
         urgent_workspace        $base  $red      $crust
