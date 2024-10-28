@@ -10,7 +10,7 @@ localectl set-keymap --no-convert us
 
 # Detect Monitors & Ensure Order
 xrandr --auto
-xrandr --output HDMI-0 --right-of DP-0
+xrandr --output HDMI-A-0 --right-of DisplayPort-2
 
 # Add Background Image
 feh --bg-scale ~/Pictures/wallpaper.jpg
