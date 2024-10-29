@@ -3,6 +3,7 @@ ln -s ~/configs/alacritty ~/.config/alacritty
 ln -s ~/configs/git ~/.config/git
 ln -s ~/configs/i3/base ~/.config/i3
 ln -s ~/configs/i3/status ~/.config/i3status
+ln -s ~/configs/redshift ~/.config/redshift
 ln -s ~/configs/rofi ~/.config/rofi
 ln -s ~/configs/tmux ~/.config/tmux
 ln -s ~/configs/nvim ~/.config/nvim
