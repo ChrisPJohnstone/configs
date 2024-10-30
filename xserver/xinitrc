@@ -16,6 +16,7 @@ xrandr --output HDMI-A-0 --right-of DisplayPort-2
 feh --bg-scale ~/Pictures/wallpaper.jpg
 
 # Start redshift
+systemctl --user stop redshift.service
 systemctl --user start redshift.service
 
 # Launch Notification Daemon
