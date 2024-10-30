@@ -33,16 +33,7 @@ HISTFILE=~/.histfile
 SAVEHIST=1000
 
 # --------------------------------- ALIASES --------------------------------- #
-# Aliases cdk to clear before running
-alias cdk="clear ; cdk"
-
-# Alias to start tmux session script
 alias tcd="~/configs/scripts/start_tmux_session.sh"
-
-# Alias to make nix shell run zsh
-alias nix-shell="nix-shell --run zsh"
-
-# Aliases grep to exclude directories that make me cry
 alias safegrep='clear ; grep \
     --exclude-dir ".idea" \
     --exclude-dir ".git" \
