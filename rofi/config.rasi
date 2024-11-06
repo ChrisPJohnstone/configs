@@ -16,7 +16,7 @@ window {
     border:                         2px;
     border-color:                   @BDR;
     border-radius:                  10px;
-    width:                          1500px;
+    width:                          750px;
     anchor:                         center;
     x-offset:                       0;
     y-offset:                       0;
@@ -34,7 +34,7 @@ textbox-prompt-colon {
     str: 			                "";
     border-radius:                  100%;
     padding:                        8px 12px 8px 12px;
-    font:			                "Iosevka Nerd Font 30";
+    font:			                "Iosevka Nerd Font 10";
 }
 
 entry {
@@ -83,8 +83,8 @@ listview {
 mainbox {
     background-color:               @BG;
     children:                       [ inputbar, listview ];
-    spacing:                        15px;
-    padding:                        15px;
+    spacing:                        5px;
+    padding:                        5px;
 }
 
 element {
@@ -101,7 +101,7 @@ element-icon {
     background-color:               inherit;
     text-color:                     inherit;
     cursor:                         inherit;
-    size:                           75px;
+    size:                           30px;
 }
 
 element-text {

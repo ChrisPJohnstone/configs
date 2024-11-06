@@ -28,3 +28,7 @@ bar {
 # Remove title bar
 default_border                  pixel 0
 default_floating_border         pixel 0
+
+# Scale monitors
+output HDMI-A-1 scale 2
+output DP-3 scale 2
