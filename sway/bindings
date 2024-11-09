@@ -5,7 +5,7 @@ bindsym $mod+space              exec --no-startup-id rofi -show drun
 bindsym $mod+Return             exec alacritty -e tmux new-session -A -s Home -n Home
 bindsym $mod+Shift+e            exec swaymsg exit
 bindsym $mod+Shift+q            kill
-bindsym $mod+Shift+s            exec flameshot gui
+bindsym $mod+Shift+s            exec grim -g "$(slurp -d)" - | wl-copy
 
 bindsym $mod+f                  fullscreen toggle
 bindsym $mod+j                  focus left
