@@ -31,20 +31,26 @@
     },
     "disk": {
         "format": " {percentage_used}%",
+        "path": "/home",
+        "tooltip": true,
+        "tooltip-format": "{specific_used:0.0f} / {specific_total:0.0f} Gb",
+        "unit": "GB",
         "on-click": "nemo"
     },
     "memory": {
         "format": " {}%",
+        "tooltip": true,
         "on-click": "alacritty -e htop"
     },
     "cpu": {
         "format": " {usage}%",
+        "tooltip": true,
         "on-click": "alacritty -e htop"
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
         "format": "{icon} {temperatureC}°C",
+        "tooltip": true,
         "format-icons": ["", "", ""],
         "on-click": "alacritty -e htop"
     },
