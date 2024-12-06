@@ -1,29 +1,5 @@
-font                    pango:monospace 10
-set $base               #24273a
-set $text               #cad3f5
-set $purple             #af87ff
-set $red                #ed8796
-set $grey               #5b6078
-set $crust              #303030
-
 bar {
-    position                    top
-    swaybar_command             waybar
-    status_command              i3status
-    tray_output                 DP-0
-    separator_symbol            " "
-    colors {
-        background              $base
-        statusline              $text
-        focused_statusline      $text
-        focused_separator       $base
-
-        # target                border bg        text
-        focused_workspace       $base  $purple   $crust
-        active_workspace        $base  $grey     $text
-        inactive_workspace      $base  $base     $text
-        urgent_workspace        $base  $red      $crust
-    }
+    swaybar_command waybar
 }
 
 # Remove title bar
