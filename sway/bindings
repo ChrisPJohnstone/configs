@@ -1,7 +1,10 @@
 set $mod Mod4
+set $menu --no-startup-id rofi -show drun
 
 bindsym $mod+Shift+r            reload
-bindsym $mod+space              exec --no-startup-id rofi -show drun
+bindsym $mod+space              exec $menu
+bindcode --release 133          exec $menu
+bindcode --release 134          exec $menu
 bindsym $mod+Return             exec alacritty -e tmux new-session -A -s Home -n Home
 bindsym $mod+Shift+e            exec swaymsg exit
 bindsym $mod+Shift+q            kill
