@@ -6,16 +6,15 @@
         "sway/workspaces"
     ],
     "modules-center": [
-        "sway/window"
+        "clock"
     ],
     "modules-right": [
+        "tray",
         "disk",
         "memory",
         "cpu",
         "temperature",
-        "pulseaudio",
-        "tray",
-        "clock"
+        "pulseaudio"
     ],
     "custom/launcher": {
         "format": "",
@@ -26,8 +25,13 @@
         "warp-on-scroll": false,
         "format": "{name}"
     },
-    "sway/window": {
-        "format": "{app_id}"
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d %H:%M}",
+        "on-click": "alacritty -e calcurse"
+    },
+    "tray": {
+        "spacing": 5
     },
     "disk": {
         "format": " {percentage_used}%",
@@ -67,13 +71,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "tray": {
-        "spacing": 5
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%Y-%m-%d %H:%M}",
-        "on-click": "alacritty -e calcurse"
     }
 }

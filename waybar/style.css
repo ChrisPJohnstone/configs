@@ -14,15 +14,15 @@ window#waybar {
     color: @text;
 }
 
-#workspaces button,
 #custom-launcher,
+#workspaces button,
+#clock,
+#tray,
 #disk,
+#memory,
 #cpu,
 #temperature,
-#memory,
-#clock,
-#pulseaudio,
-#tray {
+#pulseaudio {
     color: @text;
     border: none;
     border-radius: 0;
@@ -31,11 +31,11 @@ window#waybar {
 
 #custom-launcher:hover,
 #workspaces button:hover,
+#clock:hover,
 #disk:hover,
+#memory:hover,
 #cpu:hover,
 #temperature:hover,
-#memory:hover,
-#clock:hover,
 #pulseaudio:hover {
     background: @purple;
     color: @grey;
