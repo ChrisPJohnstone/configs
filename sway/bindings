@@ -8,7 +8,7 @@ bindcode --release 134          exec $menu
 bindsym $mod+Return             exec alacritty -e tmux new-session -A -s Home -n Home
 bindsym $mod+Shift+e            exec swaymsg exit
 bindsym $mod+Shift+q            kill
-bindsym $mod+Shift+s            exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+Shift+s            exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 bindsym $mod+f                  fullscreen toggle
 bindsym $mod+j                  focus left
