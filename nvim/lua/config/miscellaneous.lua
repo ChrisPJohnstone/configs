@@ -7,9 +7,6 @@ vim.opt.smartindent = true
 -- Diable mouse interaction
 vim.opt.mouse = ""
 
--- Disable linewrapping
-vim.opt.wrap = false
-
 -- Remove directories from vimgrep
 vim.opt.wildignore:append("*/__pycache__/*")
 vim.opt.wildignore:append("*/node_movules/*")

@@ -30,3 +30,11 @@ vim.opt.showcmd = true
 
 -- Highlight matches to current search buffer
 vim.opt.hlsearch = true
+
+-- Disable linewrapping but have settings in case I enable it
+vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.breakat = " "
+vim.opt.breakindent = true
+vim.opt.breakindentopt = "shift:2"
+vim.opt.showbreak = "↪"
