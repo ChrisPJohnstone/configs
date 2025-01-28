@@ -11,4 +11,4 @@ ln -s ~/configs/sway        ~/.config/sway
 ln -s ~/configs/tmux        ~/.config/tmux
 ln -s ~/configs/vim         ~/.vim
 ln -s ~/configs/waybar      ~/.config/waybar
-ln -s ~/configs/zsh/.zshrc  ~/.zshrc
+ln -s ~/configs/zsh/zshrc   ~/.zshrc
