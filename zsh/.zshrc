@@ -18,8 +18,8 @@ function parse_virtual_env() {
 # Change Prompt
 setopt PROMPT_SUBST
 VIRTUAL_ENV_DISABLE_PROMPT=1
-PROMPT='%F{141}%K{236}'         # Set colours
-PROMPT+='%S'                    # Invert colours to highlight prompt
+PROMPT='%S'                     # Invert colours to highlight prompt
+# PROMPT+='%F{141}%K{236}'        # Set colours # Commented out to inheriting from alacritty, leaving here in case I need to change terminal
 PROMPT+='[%1~]'                 # Add current directory
 PROMPT+='$(parse_git_branch)'   # Add git branch
 PROMPT+='$(parse_virtual_env)'  # Add virtual environment
