@@ -11,3 +11,6 @@ bindsym XF86AudioMicMute        exec --no-startup-id pactl set-source-mute @DEFA
 
 # Start mako
 exec mako
+
+# Start VPN
+exec piactl connect
