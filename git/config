@@ -8,6 +8,8 @@
 	defaultBranch = main
 [push]
 	default = current
+[pull]
+	rebase = true
 [alias]
     edit = !$EDITOR $(git ls-files -o -m --exclude-standard)
     newbranch = !git checkout develop && git pull && git checkout -b $1
