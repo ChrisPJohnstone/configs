@@ -1,3 +1,6 @@
+-- Remap leader
+vim.g.mapleader = " "
+
 -- Open dir of current file
 vim.api.nvim_set_keymap("n", "<leader>d", ":e %:h<CR>", {noremap = true})
 
