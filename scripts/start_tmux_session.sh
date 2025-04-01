@@ -3,7 +3,11 @@ then
     path="~"
     session_name="Home"
 else
-    path="$PWD/$1"
+    if [[ $1 == */ ]]; then
+        path="$PWD/${1:0:${#1}-1}"
+    else
+        path="$PWD/$1"
+    fi
     session_name="${path##*/}"
 fi
 
