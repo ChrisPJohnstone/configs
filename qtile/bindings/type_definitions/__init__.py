@@ -1,3 +1,1 @@
-from .click_binding_config import ClickBindingConfig
-from .drag_binding_config import DragBindingConfig
-from .key_binding_config import KeyBindingConfig
+from .directions import Directions
