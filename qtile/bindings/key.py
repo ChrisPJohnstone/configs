@@ -76,7 +76,7 @@ class KeyBindings:
         return self._bind(modifiers, key, *commands, desc=desc)
 
     def kill_window(self, modifiers: list[str], key: str) -> Key:
-        commands: list[LazyCall] = [lazy.spawn(self.terminal)]
+        commands: list[LazyCall] = [lazy.window.kill()]
         desc: str = "Kill focused window"
         return self._bind(modifiers, key, *commands, desc=desc)
 
@@ -85,7 +85,7 @@ class KeyBindings:
         desc: str = "Shutdown qtile"
         return self._bind(modifiers, key, *commands, desc=desc)
 
-    def switch_to_group(self, modifiers: list[str]) -> list[Key]:
+    def move_group(self, modifiers: list[str]) -> list[Key]:
         return [
             self._bind(
                 modifiers,
@@ -96,7 +96,7 @@ class KeyBindings:
             for group in self.groups
         ]
 
-    def move_to_group(self, modifiers: list[str], follow: bool) -> list[Key]:
+    def move_window_to_group(self, modifiers: list[str], follow: bool) -> list[Key]:
         return [
             self._bind(
                 modifiers,
@@ -181,11 +181,11 @@ class KeyBindings:
         return [
             self.refresh_config([self.mod, "control"], "r"),
             self.spawn_launcher([self.mod], "space"),
-            self.spawn_terminal([self.mod], "enter"),
+            self.spawn_terminal([self.mod], "Return"),
             self.kill_window([self.mod, "shift"], "q"),
             self.shutdown_qtile([self.mod, "shift"], "e"),
-            *self.switch_to_group([self.mod]),
-            *self.move_to_group([self.mod], follow=False),
+            *self.move_group([self.mod]),
+            *self.move_window_to_group([self.mod, "shift"], follow=False),
             *self.move_focus([self.mod]),
             *self.move_window([self.mod, "shift"]),
             *self.grow_window([self.mod, "control"]),
