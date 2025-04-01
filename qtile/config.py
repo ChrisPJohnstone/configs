@@ -1,7 +1,8 @@
 from libqtile.config import Click, Drag, Group, Key
+from libqtile.layout.base import Layout
 
 from bindings import ClickBindings, Directions, DragBindings, KeyBindings
-from layouts import layouts
+from layouts import Layouts
 from screens import screens
 
 
@@ -22,3 +23,4 @@ mouse: list[Click | Drag] = [
     *ClickBindings(mod).init_bindings(),
     *DragBindings(mod).init_bindings(),
 ]
+layouts: list[Layout] = Layouts().init_layouts()
