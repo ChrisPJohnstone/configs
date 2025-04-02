@@ -3,10 +3,7 @@ from libqtile.lazy import LazyCall, lazy
 
 
 class DragBindings:
-    def __init__(
-        self,
-        mod: str,
-    ) -> None:
+    def __init__(self, mod: str) -> None:
         self.mod = mod
 
     @property
