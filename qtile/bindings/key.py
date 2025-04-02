@@ -2,7 +2,7 @@ from libqtile import qtile
 from libqtile.config import Group, Key
 from libqtile.lazy import LazyCall, lazy
 
-from .type_definitions import Directions
+from utils import Directions
 
 
 class KeyBindings:

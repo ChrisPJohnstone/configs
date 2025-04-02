@@ -1,21 +1,40 @@
-from libqtile.widget import (
-    GroupBox,
-    CurrentLayout,
-    Spacer,
-    Clock,
-)
 from libqtile.bar import Bar
 from libqtile.config import Screen
+
+from utils import Colors
+from widgets import Widgets
 
 
 class Screens:
     def __init__(
         self,
+        widgets: Widgets,
         font_size: int,
+        colors: Colors,
+        font: str = "sans",
         margin: int | list[int] = [0, 0, 0, 0],
     ) -> None:
+        self.widgets = widgets
+        self.font = font
         self.font_size = font_size
+        self.colors = colors
         self.margin = margin
+
+    @property
+    def widgets(self) -> Widgets:
+        return self._widgets
+
+    @widgets.setter
+    def widgets(self, value: Widgets) -> None:
+        self._widgets: Widgets = value
+
+    @property
+    def font(self) -> str:
+        return self._font
+
+    @font.setter
+    def font(self, value: str) -> None:
+        self._font: str = value
 
     @property
     def font_size(self) -> int:
@@ -24,6 +43,14 @@ class Screens:
     @font_size.setter
     def font_size(self, value: int) -> None:
         self._font_size: int = value
+
+    @property
+    def colors(self) -> Colors:
+        return self._colors
+
+    @colors.setter
+    def colors(self, value: Colors) -> None:
+        self._colors: Colors = value
 
     @property
     def margin(self) -> list[int]:
@@ -38,14 +65,10 @@ class Screens:
 
     def init_bar(self) -> Bar:
         return Bar(
-            widgets=[
-                GroupBox(),
-                CurrentLayout(),
-                Spacer(),
-                Clock(format="%Y-%m-%d %a %H:%M"),
-            ],
-            size=self.font_size + self.margin[0] + self.margin[2],
+            size=int(self.font_size * 1.5),
             margin=self.margin,
+            background=self.colors.background,
+            widgets=self.widgets.init_widgets(),
         )
 
     def init_screens(self) -> list[Screen]:
