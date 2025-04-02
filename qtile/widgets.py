@@ -1,11 +1,16 @@
 from collections.abc import Callable
 
 from libqtile.widget import (
+    CPU,
     Clock,
     CurrentLayout,
     CurrentLayoutIcon,
+    DF,
     GroupBox,
+    Memory,
     Spacer,
+    ThermalSensor,
+    Volume,
 )
 from libqtile.widget.base import _Widget
 from libqtile.bar import STRETCH
@@ -13,12 +18,15 @@ from libqtile.lazy import LazyCall
 
 from utils import Colors
 
+type MouseCallback = dict[str, LazyCall | Callable]
+
 
 class Widgets:
     def __init__(
         self,
         font_size: int,
         colors: Colors,
+        space_between_widgets: int,
         font: str = 'sans',
         margin: int | list[int] = [0, 0, 0, 0],
     ) -> None:
@@ -26,6 +34,7 @@ class Widgets:
         self.font_size = font_size
         self.colors = colors
         self.margin = margin
+        self.space_between_widgets = space_between_widgets
 
     @property
     def font(self) -> str:
@@ -62,6 +71,14 @@ class Widgets:
         else:
             self._margin: list[int] = value
 
+    @property
+    def space_between_widgets(self) -> int:
+        return self._space_between_widgets
+
+    @space_between_widgets.setter
+    def space_between_widgets(self, value: int) -> None:
+        self._space_between_widgets: int = value
+
     def clock(self) -> Clock:
         return Clock(
             font=self.font,
@@ -69,6 +86,22 @@ class Widgets:
             foreground=self.colors.text,
             format="%Y-%m-%d %H:%M",
         )
+
+    def cpu(self) -> list[CPU | ThermalSensor]:
+        cpu: CPU = CPU(
+            font=self.font,
+            fontsize=self.font_size,
+            foreground=self.colors.text,
+            format=" {load_percent}%",
+        )
+        temp: ThermalSensor = ThermalSensor(
+            font=self.font,
+            fontsize=self.font_size,
+            foreground=self.colors.text,
+            format="{temp:.0f}{unit}",
+            padding=5,
+        )
+        return [cpu, temp]
 
     def current_layout(
         self,
@@ -89,6 +122,16 @@ class Widgets:
         )
         return [icon, layout]
 
+    def disk(self) -> DF:
+        return DF(
+            font=self.font,
+            fontsize=self.font_size,
+            foreground=self.colors.text,
+            visible_on_warn=False,
+            partition="/",
+            format=" {r:.0f}%"
+        )
+
     def group_box(self) -> GroupBox:
         return GroupBox(
             font=self.font,
@@ -103,28 +146,51 @@ class Widgets:
             this_screen_border=self.colors.highlight,
             other_current_screen_border=self.colors.background,
             other_screen_border=self.colors.background,
-            padding_x=5,
+        )
+
+    def memory(self) -> Memory:
+        return Memory(
+            font=self.font,
+            fontsize=self.font_size,
+            foreground=self.colors.text,
+            format=" {MemPercent}%",
         )
 
     def spacer(
         self,
         length: int | object = STRETCH,
-        background: str | None = None,
-        hide_crash: bool = False,
-        mouse_callbacks: dict[str, LazyCall | Callable] = {},
+        mouse_callbacks: MouseCallback = {},
     ) -> Spacer:
-        return Spacer(
-            length=length,
-            background=background,
-            hide_crash=hide_crash,
-            mouse_callbacks=mouse_callbacks,
+        return Spacer(length=length, mouse_callbacks=mouse_callbacks)
+
+    def spacer_between_widgets(self) -> Spacer:
+        return self.spacer(self.space_between_widgets)
+
+    def volume(self) -> Volume:
+        # TODO: Make this work, I'm going to bed
+        return Volume(
+            font=self.font,
+            fontsize=self.font_size,
+            foreground=self.colors.text,
+            emoji=True,
+            emoji_list=[" ", "", "", ""]
         )
 
     def init_widgets(self) -> list[_Widget]:
         return [
+            self.spacer_between_widgets(),
             self.group_box(),
+            self.spacer_between_widgets(),
             *self.current_layout(),
             self.spacer(),
             self.clock(),
             self.spacer(),
+            self.disk(),
+            self.spacer_between_widgets(),
+            self.memory(),
+            self.spacer_between_widgets(),
+            *self.cpu(),
+            self.spacer_between_widgets(),
+            self.volume(),
+            self.spacer_between_widgets(),
         ]

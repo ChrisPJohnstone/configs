@@ -29,5 +29,5 @@ mouse: list[Click | Drag] = MouseBindings(mod).init_bindings()
 layouts: list[Layout] = Layouts().init_layouts()
 
 # Screens
-widgets: Widgets = Widgets(font_size, colors)
+widgets: Widgets = Widgets(font_size, colors, 5)
 screens: list[Screen] = Screens(widgets, font_size, colors).init_screens()
