@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "disk",
+        "memory",
+        "cpu",
+        "temperature",
+        "custom/gpu",
+        "pulseaudio"
+    ],
+    "custom/launcher": {
+        "format": "",
+        "on-click": "rofi -show drun"
+    },
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "format": "{name}"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d %H:%M}",
+        "on-click": "alacritty -e calcurse"
+    },
+    "tray": {
+        "spacing": 5
+    },
+    "disk": {
+        "format": " {percentage_used}%",
+        "path": "/home",
+        "tooltip": true,
+        "tooltip-format": "{specific_used:0.0f} / {specific_total:0.0f} Gb",
+        "unit": "GB",
+        "on-click": "nemo"
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip": true,
+        "on-click": "alacritty -e htop"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "on-click": "alacritty -e htop"
+    },
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "format": "{icon} {temperatureC}°C",
+        "tooltip": true,
+        "format-icons": ["", "", ""],
+        "on-click": "alacritty -e htop"
+    },
+    "custom/gpu": {
+        "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+        "format": "GPU: {}%",
+        "interval": 10,
+        "on-click": "alacritty -e nvtop"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}

@@ -1,0 +1,56 @@
+@define-color text      #cad3f5;
+@define-color grey      #5b6078;
+@define-color purple    #af87ff;
+@define-color red       #ed8796;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+window#waybar {
+    background-color: @grey;
+    color: @text;
+}
+
+#custom-launcher,
+#workspaces button,
+#clock,
+#tray,
+#disk,
+#memory,
+#cpu,
+#temperature,
+#custom-gpu,
+#pulseaudio {
+    color: @text;
+    border: none;
+    border-radius: 0;
+    padding: 0 5px;
+}
+
+#custom-launcher:hover,
+#workspaces button:hover,
+#clock:hover,
+#disk:hover,
+#memory:hover,
+#cpu:hover,
+#temperature:hover,
+#custom-gpu:hover,
+#pulseaudio:hover {
+    background: @purple;
+    color: @grey;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button.active {
+    background: @text;
+    color: @grey;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @grey;
+}
