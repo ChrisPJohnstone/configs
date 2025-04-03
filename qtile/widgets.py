@@ -10,7 +10,7 @@ from libqtile.widget import (
     Memory,
     Spacer,
     ThermalSensor,
-    Volume,
+    PulseVolume,
 )
 from libqtile.widget.base import _Widget
 from libqtile.bar import STRETCH
@@ -166,9 +166,8 @@ class Widgets:
     def spacer_between_widgets(self) -> Spacer:
         return self.spacer(self.space_between_widgets)
 
-    def volume(self) -> Volume:
-        # TODO: Make this work, I'm going to bed
-        return Volume(
+    def volume(self) -> PulseVolume:
+        return PulseVolume(
             font=self.font,
             fontsize=self.font_size,
             foreground=self.colors.text,
