@@ -8,9 +8,10 @@ from libqtile.widget import (
     DF,
     GroupBox,
     Memory,
-    Spacer,
-    ThermalSensor,
     PulseVolume,
+    Spacer,
+    Systray,
+    ThermalSensor,
 )
 from libqtile.widget.base import _Widget
 from libqtile.bar import STRETCH
@@ -166,6 +167,11 @@ class Widgets:
     def spacer_between_widgets(self) -> Spacer:
         return self.spacer(self.space_between_widgets)
 
+    def systray(self) -> Systray:
+        return Systray(
+            icon_size=int(self.font_size * 1.3),
+        )
+
     def volume(self) -> PulseVolume:
         return PulseVolume(
             font=self.font,
@@ -184,6 +190,8 @@ class Widgets:
             self.spacer(),
             self.clock(),
             self.spacer(),
+            self.systray(),
+            self.spacer_between_widgets(),
             self.disk(),
             self.spacer_between_widgets(),
             self.memory(),
