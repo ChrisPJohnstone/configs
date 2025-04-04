@@ -6,7 +6,6 @@
 [S] + Space         Open app launcher
 [S] + Return        Open terminal
 [S] + B             Open browser
-[S] + S             Open Steam
 
 # Navigation
 
@@ -22,3 +21,6 @@
 [S] + T             Toggle Floating
 [S] + Left Click    Drag Window
 [S] + Right Click   Resize Window
+
+# Other
+[S] + S             Screenshot
