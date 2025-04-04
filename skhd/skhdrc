@@ -2,4 +2,3 @@
 ctrl - 1 : open -a "Firefox"
 ctrl - 2 : open -a "Alacritty"
 ctrl - 3 : open -a "Microsoft Teams"
-ctrl - 4 : open -a "Postman"
