@@ -26,7 +26,7 @@ PROMPT+='$(parse_virtual_env)'  # Add virtual environment
 PROMPT+='%s '                   # Return to normal colours
 
 # Set editor
-EDITOR=nvim
+EDITOR='nvim'
 
 # Save command history
 HISTFILE=~/.histfile
