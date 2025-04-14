@@ -49,15 +49,16 @@ alias safegrep='clear ; grep \
 '
 
 # ----------------------------- SHELL SETTINGS ------------------------------ #
-bindkey -v
+set -o vi
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
 
-setopt PROMPT_SUBST
 VIRTUAL_ENV_DISABLE_PROMPT=1
-PROMPT='%S'
-PROMPT+='[%1~]'
-PROMPT+='$(parse_git_branch)'
-PROMPT+='$(parse_virtual_env)'
-PROMPT+='%s '
+PS1="$(tput rev)"
+PS1+="[\W]"
+PS1+="\$(parse_git_branch)"
+PS1+="\$(parse_virtual_env)"
+PS1+="$(tput sgr0) "
 
 HISTFILE=~/.histfile
 SAVEHIST=1000
