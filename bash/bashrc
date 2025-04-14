@@ -65,3 +65,5 @@ SAVEHIST=1000
 
 # -------------------------- ENVIRONMENT VARIABLES -------------------------- #
 export EDITOR='nvim'
+
+export LESS='-KFiI'
