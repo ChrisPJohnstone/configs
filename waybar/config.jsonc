@@ -10,6 +10,7 @@
     ],
     "modules-right": [
         "tray",
+        "custom/vpn",
         "disk",
         "memory",
         "cpu",
@@ -33,6 +34,12 @@
     },
     "tray": {
         "spacing": 5
+    },
+    "custom/vpn": {
+        "exec": "piactl get connectionstate",
+        "format": "VPN: {}",
+        "interval": 10,
+        "on-click": "/usr/share/applications/piavpn.desktop"
     },
     "disk": {
         "format": " {percentage_used}%",
