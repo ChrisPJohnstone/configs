@@ -24,3 +24,4 @@
 
 # Other
 [S] + S             Screenshot
+[S] + V             Connect/Disconnect from VPN

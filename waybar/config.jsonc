@@ -38,7 +38,7 @@
     "custom/vpn": {
         "exec": "piactl get connectionstate",
         "format": "VPN: {}",
-        "interval": 10,
+        "interval": 2,
         "on-click": "/usr/share/applications/piavpn.desktop"
     },
     "disk": {
