@@ -1,3 +1,7 @@
+# A little script to setup symlinks for my dotfiles
+# I do not have a distrohopping addiction
+# I can stop any time I want
+
 #!/usr/bin/bash
 ln -s ~/configs/alacritty       ~/.config/alacritty
 ln -s ~/configs/bash/bashrc     ~/.bashrc
