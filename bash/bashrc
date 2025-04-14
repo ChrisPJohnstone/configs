@@ -1,3 +1,8 @@
+# -------------------------- ENVIRONMENT VARIABLES --------------------------- #
+export EDITOR='nvim'
+
+export LESS='-RKFiI --jump-target .5'
+
 # --------------------------- FUNCTIONS & ALIASES ---------------------------- #
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
@@ -67,8 +72,3 @@ HISTCONTROL=ignoredups
 HISTSIZE=10000
 HISTFILE=~/.histfile
 HISTIGNORE='ls*:cd*:rm*:tcd*:fg:clear:exit'
-
-# -------------------------- ENVIRONMENT VARIABLES --------------------------- #
-export EDITOR='nvim'
-
-export LESS='-RKFiI --jump-target .5'
