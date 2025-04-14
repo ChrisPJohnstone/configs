@@ -67,11 +67,11 @@ bind -m vi-insert 'Control-l: clear-screen'
 shopt -s checkwinsize
 
 VIRTUAL_ENV_DISABLE_PROMPT=1
-PS1="$(tput rev)"
+PS1="\[$(tput rev)\]"
 PS1+="[\W]"
 PS1+="\$(parse_git_branch)"
 PS1+="\$(parse_virtual_env)"
-PS1+="$(tput sgr0) "
+PS1+="\[$(tput sgr0)\] "
 
 shopt -s histappend
 HISTCONTROL=ignoredups
