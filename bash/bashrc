@@ -71,4 +71,4 @@ HISTIGNORE='ls*:cd*:rm*:tcd*:fg:clear:exit'
 # -------------------------- ENVIRONMENT VARIABLES --------------------------- #
 export EDITOR='nvim'
 
-export LESS='-RKFiI'
+export LESS='-RKFiI --jump-target .5'
