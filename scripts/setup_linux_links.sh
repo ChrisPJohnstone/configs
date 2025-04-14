@@ -11,4 +11,3 @@ ln -s ~/configs/rofi            ~/.config/rofi
 ln -s ~/configs/tmux            ~/.config/tmux
 ln -s ~/configs/vim             ~/.vim
 ln -s ~/configs/waybar          ~/.config/makwaybar
-ln -s ~/configs/zsh/zshrc       ~/.zshrc
