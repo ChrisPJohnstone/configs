@@ -4,6 +4,11 @@ export EDITOR='nvim'
 export LESS='-RKFiI --jump-target .5'
 
 # --------------------------- FUNCTIONS & ALIASES ---------------------------- #
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+alias tcd="~/configs/scripts/start_tmux_session.sh"
+
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
 }
@@ -13,6 +18,18 @@ function parse_virtual_env() {
         echo " [${VIRTUAL_ENV##*/}]"
     fi
 }
+
+alias safegrep='grep \
+    --exclude-dir ".idea" \
+    --exclude-dir ".git" \
+    --exclude-dir ".serverless" \
+    --exclude-dir ".venv" \
+    --exclude-dir "__pycache__" \
+    --exclude-dir "cdk.out" \
+    --exclude-dir "node_modules" \
+    --exclude-dir "python_modules" \
+    --exclude-dir "venv" \
+'
 
 function rsm() {
     state_machine=$(aws stepfunctions list-state-machines --query "stateMachines[?contains(name, \`$1\`)]" --output text | cut -f 3)
@@ -39,19 +56,6 @@ function rsm() {
         sleep 5
     done
 }
-
-alias tcd="~/configs/scripts/start_tmux_session.sh"
-alias safegrep='clear ; grep \
-    --exclude-dir ".idea" \
-    --exclude-dir ".git" \
-    --exclude-dir ".serverless" \
-    --exclude-dir ".venv" \
-    --exclude-dir "__pycache__" \
-    --exclude-dir "cdk.out" \
-    --exclude-dir "node_modules" \
-    --exclude-dir "python_modules" \
-    --exclude-dir "venv" \
-'
 
 # ------------------------------ SHELL SETTINGS ------------------------------ #
 # For future me when half this stuff doesn't exist on the internet: `man bash`
