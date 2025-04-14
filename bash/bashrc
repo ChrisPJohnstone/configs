@@ -1,4 +1,4 @@
-# --------------------------- FUNCTIONS & ALIASES --------------------------- #
+# --------------------------- FUNCTIONS & ALIASES ---------------------------- #
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
 }
@@ -48,7 +48,9 @@ alias safegrep='clear ; grep \
     --exclude-dir "venv" \
 '
 
-# ----------------------------- SHELL SETTINGS ------------------------------ #
+# ------------------------------ SHELL SETTINGS ------------------------------ #
+# For future me when half this stuff doesn't exist on the internet: `man bash`
+
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
@@ -60,10 +62,13 @@ PS1+="\$(parse_git_branch)"
 PS1+="\$(parse_virtual_env)"
 PS1+="$(tput sgr0) "
 
+shopt -s histappend
+HISTCONTROL=ignoredups
+HISTSIZE=10000
 HISTFILE=~/.histfile
-SAVEHIST=1000
+HISTIGNORE='ls*:cd*:rm*:tcd*:fg:clear:exit'
 
-# -------------------------- ENVIRONMENT VARIABLES -------------------------- #
+# -------------------------- ENVIRONMENT VARIABLES --------------------------- #
 export EDITOR='nvim'
 
 export LESS='-RKFiI'
