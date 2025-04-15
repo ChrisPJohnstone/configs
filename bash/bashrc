@@ -78,3 +78,5 @@ HISTCONTROL=ignoredups
 HISTSIZE=10000
 HISTFILE=~/.histfile
 HISTIGNORE='ls:cd:fg:clear:exit'
+
+bind 'set completion-ignore-case on'
