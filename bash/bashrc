@@ -77,4 +77,4 @@ shopt -s histappend
 HISTCONTROL=ignoredups
 HISTSIZE=10000
 HISTFILE=~/.histfile
-HISTIGNORE='ls*:cd*:rm*:tcd*:fg:clear:exit'
+HISTIGNORE='ls:cd:fg:clear:exit'
