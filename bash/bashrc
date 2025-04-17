@@ -1,24 +1,33 @@
 # -------------------------- ENVIRONMENT VARIABLES --------------------------- #
+
+# Editor for programs to default do (e.g. `git`) 
 export EDITOR='nvim'
 
+# Settings to pass to `less` (e.g. `git diff`, `man`)
 export LESS='-RKFiI --jump-target .5'
 
 # --------------------------- FUNCTIONS & ALIASES ---------------------------- #
+
+# Add colours to `ls` and `grep`
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+# Calls a custom script in this repo
 alias tcd="~/configs/scripts/start_tmux_session.sh"
 
+# Determine git branch at pwd
 function parse_git_branch() {
     git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ [\1]/p'
 }
 
+# Determine name of virtual environment if relevant
 function parse_virtual_env() {
     if [[ -n "$VIRTUAL_ENV" ]]; then
         echo " [${VIRTUAL_ENV##*/}]"
     fi
 }
 
+# Grep with a bunch of dirs I usually have to ignore
 alias safegrep='grep \
     --exclude-dir ".idea" \
     --exclude-dir ".git" \
@@ -31,6 +40,7 @@ alias safegrep='grep \
     --exclude-dir "venv" \
 '
 
+# Finds a state machine whose name contains $1 and follows it's execution
 function rsm() {
     state_machine=$(aws stepfunctions list-state-machines --query "stateMachines[?contains(name, \`$1\`)]" --output text | cut -f 3)
     count=$(echo -n "$state_machine" | grep -c "^")
@@ -60,12 +70,15 @@ function rsm() {
 # ------------------------------ SHELL SETTINGS ------------------------------ #
 # For future me when half this stuff doesn't exist on the internet: `man bash`
 
+# Enable vi like editing on the command line
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
+# Resize the shell to fit the window after actions
 shopt -s checkwinsize
 
+# Customise prompt
 VIRTUAL_ENV_DISABLE_PROMPT=1
 PS1="\[$(tput rev)\]"
 PS1+="[\W]"
@@ -73,10 +86,12 @@ PS1+="\$(parse_git_branch)"
 PS1+="\$(parse_virtual_env)"
 PS1+="\[$(tput sgr0)\] "
 
+# History settings
 shopt -s histappend
 HISTCONTROL=ignoredups
 HISTSIZE=10000
 HISTFILE=~/.histfile
 HISTIGNORE='ls:cd:fg:clear:exit'
 
+# Ignore case for tab completion
 bind 'set completion-ignore-case on'
