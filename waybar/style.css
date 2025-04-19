@@ -1,7 +1,7 @@
 @define-color text      #cad3f5;
 @define-color grey      #5b6078;
-@define-color purple    #af87ff;
-@define-color red       #ed8796;
+@define-color highlight #96CDFB;
+@define-color alert     #ed8796;
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -39,7 +39,7 @@ window#waybar {
 #temperature:hover,
 #custom-gpu:hover,
 #pulseaudio:hover {
-    background: @purple;
+    background: @highlight;
     color: @grey;
     box-shadow: inherit;
     text-shadow: inherit;
@@ -51,6 +51,6 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    background-color: @red;
+    background-color: @alert;
     color: @grey;
 }

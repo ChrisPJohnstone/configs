@@ -1,6 +1,6 @@
 * {
     font:   "Iosevka 20";
-    BG:     #1E1D2Fff;
-    FG:     #D9E0EEff;
-    BDR:    #96CDFBff;
+    BG:     #303030;
+    FG:     #cad3f5;
+    BDR:    #96CDFB;
 }
