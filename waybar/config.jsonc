@@ -38,8 +38,8 @@
     "custom/vpn": {
         "exec": "piactl get connectionstate",
         "format": "VPN: {}",
-        "interval": 2,
-        "on-click": "/usr/share/applications/piavpn.desktop"
+        "interval": 1,
+        "on-click": "~/configs/scripts/pia_vpn_util.sh"
     },
     "disk": {
         "format": " {percentage_used}%",
