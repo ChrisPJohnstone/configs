@@ -11,12 +11,12 @@ configuration {
 }
 
 window {
-    transparency:                   "real";
     background-color:               @BG;
     text-color:                     @FG;
-    border:                         2px;
     border-color:                   @BDR;
+    border:                         2px;
     border-radius:                  0px;
+    transparency:                   "real";
     width:                          750px;
     anchor:                         center;
     x-offset:                       0;
@@ -24,59 +24,50 @@ window {
 }
 
 prompt {
-    enabled: 			            true;
-    border-radius:                  0px;
-    padding: 			            8px;
     background-color: 		        @BDR;
     text-color: 		            @BG;
-    font: "Iosevka 20";
-}
-
-textbox-prompt-colon {
-    expand: 			            false;
-    str: 			                "";
-    border-radius:                  100%;
-    padding:                        8px 12px 8px 12px;
+    border-color:                   @BDR;
+    border:                         0px;
+    border-radius:                  0px;
+    enabled: 			            true;
+    padding: 			            8px;
 }
 
 entry {
     background-color:               @BG;
     text-color:                     @FG;
+    border-color:                   @BDR;
+    border:                  	    0px;
+    border-radius:                  0px;
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
     placeholder:                    "Search...";
     blink:                          true;
-    border:                  	    0px 0px 0px 0px;
-    border-color:                   @BDR;
-    border-radius:                  0px;
     padding:                        8px;
 }
 
 inputbar {
-	children: 		                [ prompt, entry ];
     background-color:               @BG;
     text-color:                     @FG;
-    expand:                         false;
-    border:                  	    0px 0px 0px 0px;
-    border-radius:                  0px;
     border-color:                   @BDR;
-    margin:                         0px 0px 0px 0px;
+    border:                  	    0px;
+    border-radius:                  0px;
+	children: 		                [ prompt, entry ];
+    expand:                         false;
+    margin:                         0px;
     padding:                        0px;
     position:                       center;
 }
 
-case-indicator {
-    background-color:               @BG;
-    text-color:                     @FG;
-    spacing:                        0;
-}
-
 listview {
     background-color:               @BG;
+    border-color:                   @BDR;
+    border:                         0px;
+    border-radius:                  0px;
     columns:                        1;
     lines:			                7;
-    spacing:                        4px;
+    spacing:                        0px;
     cycle:                          false;
     dynamic:                        true;
     scrollbar:                      false;
@@ -85,24 +76,32 @@ listview {
 
 mainbox {
     background-color:               @BG;
+    border-color:                   @BDR;
+    border:                  	    0px;
+    border-radius:                  0px;
     children:                       [ inputbar, listview ];
     spacing:                        5px;
     padding:                        5px;
 }
 
 element {
+    background-color:               inherit;
+    text-color:                     inherit;
+    border-color:                   @BDR;
+    border:                         0px;
+    border-radius:                  0px;
     enabled:                        true;
     spacing:                        10px;
     padding:                        6px;
-    border-radius:                  0px;
-    background-color:               inherit;
-    text-color:                     inherit;
     cursor:                         pointer;
 }
 
 element-icon {
     background-color:               inherit;
     text-color:                     inherit;
+    border-color:                   @BDR;
+    border:                         0px;
+    border-radius:                  0px;
     cursor:                         inherit;
     size:                           30px;
 }
@@ -110,6 +109,9 @@ element-icon {
 element-text {
     background-color:               inherit;
     text-color:                     inherit;
+    border-color:                   @BDR;
+    border:                         0px;
+    border-radius:                  0px;
     cursor:                         inherit;
     vertical-align:                 0.5;
 }
