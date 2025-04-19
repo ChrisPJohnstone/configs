@@ -3,14 +3,17 @@ SCRIPT_DIR="${HOME}/.config/rofi/scripts"
 NETFLIX="Netflix"
 PRIME_VIDEO="Amazon Prime Video"
 declare -A sites=(
-    ["Chess"]="chess.com"
-    ["Disney+"]="disneyplus.com"
-    ["Github"]="github.com/ChrisPJohnstone"
-    ["${NETFLIX}"]="netflix.com"
-    ["${PRIME_VIDEO}"]="amazon.co.uk/gp/video/storefront/"
-    ["Reddit"]="reddit.com"
+    ["Chess"]="www.chess.com"
+    ["Disney+"]="www.disneyplus.com"
+    ["Github"]="www.github.com/ChrisPJohnstone"
+    ["GMail"]="mail.google.com"
+    ["${NETFLIX}"]="www.netflix.com"
+    ["Outlook"]="outlook.live.com"
+    ["${PRIME_VIDEO}"]="www.amazon.co.uk/gp/video/storefront/"
+    ["Reddit"]="www.reddit.com"
+    ["Teams"]="teams.live.com"
 )
-declare -A searches=(
+declare -A follow_ups=(
     ["${NETFLIX}"]="${SCRIPT_DIR}/browser/search_netflix"
     ["${PRIME_VIDEO}"]="${SCRIPT_DIR}/browser/search_prime_video"
 )
@@ -20,9 +23,9 @@ if [[ -z ${input} ]]; then
     exit "Escape"
 elif [[ -z "${sites[${input}]}" ]]; then
     ${SCRIPT_DIR}/browser/search_ddg $1 "${input}"
-elif [[ -n "${searches[${input}]}" ]]; then
-    search_input=$(${SCRIPT_DIR}/input ${input})
-    eval "${searches[${input}]} $1 \"${search_input}\""
+elif [[ -n "${follow_ups[${input}]}" ]]; then
+    secondary_input=$(${SCRIPT_DIR}/input ${input})
+    eval "${follow_ups[${input}]} $1 \"${secondary_input}\""
 else
     $1 "${sites[${input}]}"
 fi
