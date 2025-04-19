@@ -7,6 +7,7 @@ declare -A sites=(
     ["Disney+"]="www.disneyplus.com"
     ["Github"]="www.github.com/ChrisPJohnstone"
     ["GMail"]="mail.google.com"
+    ["LinkedIn"]="www.linkedin.com"
     ["${NETFLIX}"]="www.netflix.com"
     ["Outlook"]="outlook.live.com"
     ["${PRIME_VIDEO}"]="www.amazon.co.uk/gp/video/storefront/"
