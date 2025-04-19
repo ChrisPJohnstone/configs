@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="${HOME}/.config/rofi/scripts"
 NETFLIX="Netflix"
+PRIME_VIDEO="Amazon Prime Video"
 declare -A sites=(
-    ["Amazon Prime Video"]="amazon.co.uk/gp/video/storefront/"
     ["Chess"]="chess.com"
     ["Disney+"]="disneyplus.com"
     ["Github"]="github.com/ChrisPJohnstone"
     ["${NETFLIX}"]="netflix.com"
+    ["${PRIME_VIDEO}"]="amazon.co.uk/gp/video/storefront/"
     ["Reddit"]="reddit.com"
 )
 declare -A searches=(
     ["${NETFLIX}"]="${SCRIPT_DIR}/browser/search_netflix"
-    # TODO: Prime, Disney+
+    ["${PRIME_VIDEO}"]="${SCRIPT_DIR}/browser/search_prime_video"
 )
 
 input=$(printf '%s\n' "${!sites[@]}" | rofi -i -dmenu -p "Browse")
