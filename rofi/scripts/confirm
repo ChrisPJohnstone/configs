@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+if [[ $(echo -e "yes\nno" | rofi -p "$1" -dmenu) == "yes" ]]; then
+    $2
+fi
