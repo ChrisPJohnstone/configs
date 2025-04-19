@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+declare -A sites=(
+    ["Amazon Prime"]="amazon.co.uk/gp/video/storefront/"
+    ["Chess"]="chess.com"
+    ["Disney+"]="disneyplus.com"
+    ["Google"]="duckduckgo.com"
+    ["Netflix"]="netflix.com"
+    ["Reddit"]="reddit.com"
+)
+
+site=$(printf '%s\n' "${!sites[@]}" | rofi -i -dmenu -p "Browse")
+if [[ -n "${sites[${site}]}" ]]; then
+    $1 "${sites[${site}]}"
+fi
