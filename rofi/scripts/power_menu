@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+declare -A options=(
+    ["Reboot"]="reboot"
+    ["Shutdown"]="shutdown now"
+)
+
+input=$(printf '%s\n' "${!options[@]}" | rofi -i -dmenu -p "Power")
+[ -n "${options[${input}]}" ] && eval "${options[${input}]}" 
