@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+SCRIPT_DIR="${HOME}/.config/rofi/scripts"
+NETFLIX="Netflix"
+declare -A sites=(
+    ["Amazon Prime Video"]="amazon.co.uk/gp/video/storefront/"
+    ["Chess"]="chess.com"
+    ["Disney+"]="disneyplus.com"
+    ["Github"]="github.com/ChrisPJohnstone"
+    ["${NETFLIX}"]="netflix.com"
+    ["Reddit"]="reddit.com"
+)
+declare -A searches=(
+    ["${NETFLIX}"]="${SCRIPT_DIR}/browser/search_netflix"
+    # TODO: Prime, Disney+
+)
+
+input=$(printf '%s\n' "${!sites[@]}" | rofi -i -dmenu -p "Browse")
+if [[ -z ${input} ]]; then
+    exit "Escape"
+elif [[ -z "${sites[${input}]}" ]]; then
+    ${SCRIPT_DIR}/browser/search_ddg $1 "${input}"
+elif [[ -n "${searches[${input}]}" ]]; then
+    search_input=$(${SCRIPT_DIR}/input ${input})
+    eval "${searches[${input}]} $1 \"${search_input}\""
+else
+    $1 "${sites[${input}]}"
+fi

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+piactl disconnect
+$1 "netflix.com/search?q=$2"

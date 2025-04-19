@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rofi -dmenu -l 0 -p $1
